@@ -1,0 +1,263 @@
+:root {
+    /* text: color of text and opposite not color of text */
+    --primary-red-color: #f63f2e;
+    --primary-orange-color: #ff6533;
+    --white-color: #fff;
+    --black-color: #000;
+    /* --gray-color: #333; */
+    --gray-color-bland: #ccc;
+    --gray-color-blander: #fafafa;
+    --text-gray-color: #333;
+    --text-white-color: #fff;
+    --text-black-color: #000;
+    --btn-priamry-color: #fb5533;
+    --hover-btn-priamry-color: #fb6445;
+    --primary-color: #ee4d2d;
+    --disable-primary-color: #fa8e7d;
+    --seperate-color: #fa725d;
+
+    --height-header: 120px;
+    --height-navbar: 32px;
+    --height-wrapper-search: calc(var(--height-header) - var(--height-navbar));
+
+    --icon-color: #4a4a4a;
+    --app-container-color: #f5f5f5;
+}
+
+* {
+    box-sizing: inherit;
+}
+
+/*
+ default font-size: 16px; 
+ khi đặt font-size: 100% cũng là 16px
+ vd muốn đặt font-size 12px thì cần phải chia ra nên các developer đã tính không đặt 100% nữa và đặt lại cho là 62.5%
+ font-size = (62.5/100)*16 = 10px
+  -> 1rem = 10px
+*/
+
+html {
+    font-size: 62.5%;
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6rem;
+    
+}
+/* Responsive */
+
+.grid {
+    width: 1200px;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.grid__full-width {
+    width: 100%;
+}
+
+.grid__row {
+    display: flex;
+    flex-wrap: wrap;    
+    margin: 0 -5px;
+}
+
+.grid__column-2 {
+    width: 16.66666%;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.grid__column-10 {
+    width: 81%;
+    padding-left: 1.33333%;
+}
+
+.grid__column-2-0 {
+    width: 20%;
+    padding-left: 5px; 
+    padding-right: 5px;
+    margin-top: 10px;
+
+}
+
+
+.grid__wrapper {
+    width: 1040px;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+
+/* Margin */
+
+
+.control-form--mt-8{
+    margin-top: 8px;
+}
+
+.control--mbottom-12 {
+    margin-bottom: 12px;
+}
+
+.control--mtop-24 {
+    margin-top: 24px;
+}
+
+
+
+/* Animation */
+@keyframes FadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes visibleScale {
+    0% {
+        transform: scale(0%);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(100%);
+        opacity: 1;
+    }
+}
+
+
+/* Modal Register and Login */
+.modal {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.35);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: FadeIn ease-in 0.35s;
+    visibility: hidden;
+}
+
+
+.modal__body {
+    background-color: var(--white-color);
+    border-radius: 4px;
+    z-index: 99;
+    position: relative;
+    animation: Zoom ease-in 0.35s;
+}
+
+/* @keyframes Zoom {
+    from {
+        transform: scale(0%);
+        opacity: 0;
+    }
+    to {
+        transform: scale(100%);
+        opacity: 1;
+    }
+} */
+
+.control-form {
+    width: 400px;
+    padding: 30px;
+}
+
+.control-form__close {
+    position: absolute;
+    right: 0;
+    top: 0;
+    
+}
+
+.control-form__close__icon {
+    font-size: 1.6rem;
+    padding: 12px 16px;
+}
+
+.control-form__close:hover .control-form__close__icon {
+    color: var(--text-white-color);
+    background-color: var(--primary-color);
+    cursor: pointer;
+}
+
+.btn-primary {
+        border: none;
+    border-radius: 2px;
+    outline: none;
+    padding: 9px 12px;
+    background-color: var(--btn-priamry-color);
+    color: var(--text-white-color);
+    cursor: pointer;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+.btn {
+    border: none;
+    border-radius: 2px;
+    outline: none;
+    padding: 9px 12px;
+    background-color: var(--white-color);
+    color: var(--text-gray-color);
+    cursor: pointer;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Selection Price */
+
+.select-price {
+    min-width: 160px;
+    border-radius: 2px;
+    padding: 9px 12px;
+    background-color: var(--white-color);
+    color: var(--text-gray-color);
+    position: relative;
+    cursor: pointer;
+   
+
+}   
+
+.select-price:hover .select-price__list {
+    display: block;
+}
+
+.select-price__list {
+    position: absolute;
+    top: calc(100% + 1px);
+    left: 0;
+    right: 0;
+    background-color: var(--white-color);
+    border-radius: 2px;
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+    padding: 6px 0;
+    animation: FadeIn ease-in 0.2s;
+    -webkit-animation: FadeIn ease-in 0.2s;
+    -moz-animation: FadeIn ease-in 0.2s;
+    -o-animation: FadeIn ease-in 0.2s;
+    will-change: opacity;
+    display: none;
+    z-index: 1;
+}
+
+.select-price__item {
+
+}
+
+.select-price__link {
+    display: block;
+    padding: 10px 16px;
+    text-decoration: none;
+    color: var(--text-gray-color);
+}
+
+.select-price__link:hover {
+    color: var(--primary-color);
+}
